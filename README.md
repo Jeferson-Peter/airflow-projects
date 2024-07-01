@@ -106,3 +106,34 @@ airflow-projects/
 - `requirements.txt`: List of Python dependencies.
 
 
+<details>
+  <summary><b>DAG: forecast_etl</b></summary>
+   <h4>Taks</h4>
+   <ul>
+      <li><b>Create Table</b>: Creates a table in PostgreSQL if it doesn't exist.</li>
+      <li><b>Transform Data</b>: Transforms the extracted data to a format suitable for insertion into the database.</li>
+      <li><b>Generate SQL</b>: Generates the SQL insert statement for the transformed data.</li>
+      <li><b>Insert Data</b>: Inserts the transformed data into the PostgreSQL table.</li>
+   </ul>
+   
+   <h4>Variables</h4>
+   <ul>
+      <li><b>open_weather_api</b>: Your OpenWeatherMap API key stored as an Airflow Variable.</li>
+      <li><b>city_name</b>: The city for which to fetch the weather data, stored as an Airflow Variable.</li>
+   </ul>
+
+   <h4>Airflow Connections</h4>
+   <ul>
+      <li><b>airflow_postgres_conn</b>: Connection ID for connecting to the PostgreSQL database. This should be configured          in Airflow with the appropriate connection details.</li>
+   </ul>
+
+   <h4>Prerequisites</h4>
+   <p>To successfully run this DAG, ensure the following prerequisites are met:</p>
+   <ul>
+      <li>Apache Airflow is installed and configured.</li>
+      <li>PostgreSQL database is set up and accessible from Airflow.</li>
+      <li>Airflow variables `open_weather_api` and `open_weather_city` are configured.</li>
+   </ul>
+</details>
+
+
